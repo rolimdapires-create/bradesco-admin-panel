@@ -42,7 +42,7 @@ export default function AdminPanel() {
     const newSocket = io(window.location.origin, {
       query: { role: 'operator' },
       reconnection: true,
-      transports: ['websocket']
+      transports: ['websocket', 'polling']
     });
 
     newSocket.on('connect', () => {

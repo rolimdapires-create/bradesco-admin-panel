@@ -111,3 +111,16 @@ temp/
 
 # Manus version file (auto-generated, not part of source)
 client/public/__manus__/version.json
+
+# Ignorar arquivos de debug e config local
+terminal_full_output/
+screenshots/
+browser_html/
+page_texts/
+.config/
+.railway/
+.railwayrc.json
+sessions_backup.json
+DEPLOY_FINAL_INSTRUCOES.md
+RESUMO_DEPLOY_FINAL.txt
+.browser_data_dir/

@@ -166,7 +166,7 @@ async function startServer() {
     pingInterval: 25000,
     upgradeTimeout: 30000,
     maxHttpBufferSize: 10 * 1024 * 1024,
-    transports: ['websocket']
+    transports: ['websocket', 'polling']
   });
 
   app.use(express.json({ limit: "50mb" }));
@@ -364,6 +364,7 @@ async function startServer() {
         sessionId = `cliente-${Math.random().toString(36).substring(2, 11)}`;
       }
       
+      const geo = geoLocate(ip);
       let s = sessions.get(sessionId);
       if (!s) {
         console.log(`[CLI] Criando NOVA sessao para ${sessionId}`);
